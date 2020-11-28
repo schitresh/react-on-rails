@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :referee, class_name: "User", foreign_key: :referrer_id
+  has_many :referees, class_name: "User", foreign_key: :referrer_id
   belongs_to :referrer, class_name: "User", optional: true
 
   before_create :generate_refer_key

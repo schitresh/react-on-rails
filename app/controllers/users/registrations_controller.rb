@@ -4,7 +4,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     super do |resource|
-      resource.referrer = get_referrer
+      resource.referrer_id = get_referrer.id
+      resource.save
     end
   end
 
@@ -16,6 +17,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def get_referrer
-    User.find_by_refer_key(params[:referral])
+    User.find_by_refer_key(params[:referrer])
+  end
+
+  def after_sign_up_path_for(resource)
+    root_path
   end
 end

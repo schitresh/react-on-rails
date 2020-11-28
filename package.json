@@ -10,7 +10,9 @@
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "prop-types": "^15.7.2",
     "react-dom": "^17.0.1",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "webpacker": "^4.6.0",
+    "yarn": "^1.22.10"
   },
   "version": "0.1.0",
   "devDependencies": {
